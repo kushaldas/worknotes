@@ -7,7 +7,7 @@ This section contains my worknotes related to the Fedora cloud images.
 Imagefactory
 -------------
 
-The cloud images are build using `imagefactory <https://github.com/redhat-imaging/imagefactory>`_.
+The cloud images are build using `imagefactory <https://github.com/redhat-imaging/imagefactory>`_ and `oz <https://github.com/clalancette/oz/wiki/Oz-architecture>`_.
 
 I am currently using a Fedora 20 system to do so.
 
@@ -45,7 +45,7 @@ koji-\*.ks
 
 tdl-x86_64.xml
 
-    The XML schema required for the imagefactory. The koji imagefactory is a patched which does not need any **rootpw**, but we do need it here.
+    The XML schema required for the imagefactory. The koji imagefactory is a patched package which does not need any **rootpw**, but we do need it here. To learn more about the XML tags, you can view `this guide <http://imgfac.org/documentation/tdl/TDL.html>`_
 
 
 
