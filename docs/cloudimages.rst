@@ -44,7 +44,7 @@ Next we are going to use imagefactory to build your first image. `Download <http
 
 Then just use the following command to build the image.::
 
-    # sh dobuild.sh
+    # ./dobuild.sh fedora-cloud-base-1dddaee.ks
 
 Why the kickstart file used by Fedora koji looks different?
 ###########################################################
