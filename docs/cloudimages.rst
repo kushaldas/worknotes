@@ -74,3 +74,8 @@ tdl-x86_64.xml
 
 .. note::
    You will find diffrent kind of URL(s) used for the koji builds of the same cloud images. Like *http://compose-x86-02.phx2.fedoraproject.org/compose/21_Beta_RC2/21_Beta/Cloud/x86_64/os/* which is actually the local host where the compose run and after all the processes are done and verified, it is synced to a public repo like *http://dl.fedoraproject.org/pub/alt/stage/21_Beta_RC2/Cloud/x86_64/os/*. 
+
+Disabling root password
+#########################
+
+You can configure imagefactory to disable any root password in the template. You have to do it in */etc/imagefactory/imagefactory.conf*, change the value of *tdl_require_root_pw* to 0.
