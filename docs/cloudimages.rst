@@ -10,6 +10,12 @@ Fedora kickstart files are in a git repository. You can use the following comman
 
     $ git clone https://git.fedorahosted.org/git/spin-kickstarts.git
 
+Release engineering scripts
+---------------------------
+
+Fedora release engineering team has many scripts for their work. These scripts are available at the following git repo.::
+
+    $ git clone https://git.fedorahosted.org/git/releng
 
 Imagefactory
 -------------
@@ -55,4 +61,5 @@ tdl-x86_64.xml
     The XML schema required for the imagefactory. The koji imagefactory is a patched package which does not need any **rootpw**, but we do need it here. To learn more about the XML tags, you can view `this guide <http://imgfac.org/documentation/tdl/TDL.html>`_
 
 
-
+.. note:: Difference between different repo URL(s)
+   You will find diffrent kind of URL(s) used for the koji builds of the same cloud images. Like **http://compose-x86-02.phx2.fedoraproject.org/compose/21_Beta_RC2/21_Beta/Cloud/x86_64/os/** which is actually the local host where the compose run and after all the processes are done and verified, it is synced to a public repo like **http://dl.fedoraproject.org/pub/alt/stage/21_Beta_RC2/Cloud/x86_64/os/**. 
