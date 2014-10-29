@@ -3,6 +3,13 @@ Notes related to the Fedora Cloud images
 
 This section contains my worknotes related to the Fedora cloud images.
 
+Kickstart files
+---------------
+
+Fedora kickstart files are in a git repository. You can use the following command to clone them.::
+
+    $ git clone https://git.fedorahosted.org/git/spin-kickstarts.git
+
 
 Imagefactory
 -------------
