@@ -10,6 +10,7 @@ Fedora kickstart files are in a git repository. You can use the following comman
 
     $ git clone https://git.fedorahosted.org/git/spin-kickstarts.git
 
+
 Release engineering scripts
 ---------------------------
 
@@ -44,6 +45,16 @@ Next we are going to use imagefactory to build your first image. `Download <http
 Then just use the following command to build the image.::
 
     # sh dobuild.sh
+
+Why the kickstart file used by Fedora koji looks different?
+###########################################################
+
+Because before the installation *ksflatten* command creates an unified kickstart file which has all included kickstart files.
+
+For example run this command in the sphin-kickstarts git repo to create a latest kickstart file::
+
+    $  ksflatten -c fedora-cloud-base.ks -o fedora-cloud-base-$(git rev-parse --short HEAD).ks >& /dev/null
+
 
 Important files
 ###############
