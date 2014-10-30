@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    cloudimages
+   faq
 
 
 Indices and tables
