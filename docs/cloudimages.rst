@@ -18,6 +18,12 @@ Fedora release engineering team has many scripts for their work. These scripts a
 
     $ git clone https://git.fedorahosted.org/git/releng
 
+Fedora Cloud builds on Koji
+---------------------------
+
+Use `this link <http://koji.fedoraproject.org/koji/tasks?start=0&state=closed&view=flat&method=createImage&order=-id>`_ to
+find Fedora Cloud builds on Koji.
+
 Imagefactory
 -------------
 
