@@ -79,3 +79,26 @@ Disabling root password
 #########################
 
 You can configure imagefactory to disable any root password in the template. You have to do it in */etc/imagefactory/imagefactory.conf*, change the value of *tdl_require_root_pw* to 0.
+
+How to test a koji image in your local computer?
+-------------------------------------------------
+
+There are many different ways one can run and test the Fedora cloud images built on koji.fedoraproject.org. I am going to talk
+about a simple script written by Mike Ruckman. First checkout the latest version of the code from github.::
+
+    $ git clone https://github.com/Rorosha/testCloud.git
+
+You will also have to install *libguestfs-tools-c* package using yum.::
+
+    $ yum install libguestfs-tools-c -y
+
+
+Now inside the directory there is a script called *testCloud.py*, we will use this along with an URL to a cloud image.::
+
+    $ ./testCloud.py --ram 2048 --no-graphic https://kojipkgs.fedoraproject.org//work/tasks/8933/7978933/Fedora-Cloud-Base-20141029-21_Beta.i386.qcow2
+
+As you can see I gave 2GB ram to that test instance. After this you can simply login to the instance using ssh.::
+
+    $ ssh -F ./ssh_config testCloud
+
+The default password is **passw0rd**.
