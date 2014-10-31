@@ -108,3 +108,8 @@ As you can see I gave 2GB ram to that test instance. After this you can simply l
     $ ssh -F ./ssh_config testCloud
 
 The default password is **passw0rd**.
+
+List of current tests for Fedora Cloud image
+---------------------------------------------
+
+This `wiki page <https://fedoraproject.org/wiki/Test_Results:Current_Cloud_Test>`_ contains all the latest tests to run on Fedora Cloud images.
