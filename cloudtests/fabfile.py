@@ -22,35 +22,46 @@ from fabric.api import sudo
 
 def selinux():
     'Gets the selinux status'
-    return sudo('getenforce')
+    result = 'Test SeLinux: {status}'
+    response = sudo('getenforce')
+    return_value = False
+    status = 'FAIL'
+    if response == 'Enforcing':
+        status = 'SUCCESS'
+        return_value = True
+    print result.format(status=status)
+    return return_value
+
 
 def systemlogging():
     'Gets the system logging status'
-    return sudo('journalctl -a --no-pager -r --since=$(date +%Y-%m-%d) -n1')
+    result = 'Test system logging: {status}'
+    response = sudo(
+        'journalctl -a --no-pager -r --since=$(date +%Y-%m-%d) -n1')
+    return_value = False
+    status = 'FAIL'
+    if response.splitlines() == 2:
+        status = 'SUCCESS'
+        return_value = True
+    print result.format(status=status)
+    return return_value
+
 
 def service_status():
     'No service should fail in the startup'
-    return sudo('systemctl --all --failed')
+    result = 'Test service: {status}'
+    response = sudo('systemctl --all --failed')
+    status = 'FAIL'
+    return_value = False
+    if '0 loaded units listed' in response:
+        status = 'SUCCESS'
+        return_value = True
+    print result.format(status=status)
+    return return_value
+
 
 def all():
-    res = selinux()
-    if res == 'Enforcing':
-        selinux_result = "SeLinux passsed."
-    res = systemlogging()
-    if res.splitlines() == 2:
-        system_logging_result = "System logging test passed."
-    else:
-        system_logging_result = "System logging test failed."
-    res = service_status()
-    if '0 loaded units listed' in res:
-        status = True
-        service_result = "Service tests passed."
-    else:
-        status = False
-        service_result = res
-
     print "\n\n\n"
-    print selinux_result
-    print system_logging_result
-    print service_result
-
+    selinux()
+    systemlogging()
+    service_status()
