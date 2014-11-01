@@ -26,7 +26,7 @@ def selinux():
 
 def systemlogging():
     'Gets the system logging status'
-    return sudo('journalctl -a --no-pager')
+    return sudo('journalctl -a --no-pager -r --since=$(date +%Y-%m-%d) -n1')
 
 def service_status():
     'No service should fail in the startup'
@@ -36,7 +36,11 @@ def all():
     res = selinux()
     if res == 'Enforcing':
         selinux_result = "SeLinux passsed."
-    systemlogging()
+    res = systemlogging()
+    if res.splitlines() == 2:
+        system_logging_result = "System logging test passed."
+    else:
+        system_logging_result = "System logging test failed."
     res = service_status()
     if '0 loaded units listed' in res:
         status = True
@@ -47,5 +51,6 @@ def all():
 
     print "\n\n\n"
     print selinux_result
+    print system_logging_result
     print service_result
 
