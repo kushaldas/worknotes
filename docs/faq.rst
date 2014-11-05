@@ -3,6 +3,11 @@ FAQ
 
 All the random questions that comes in my mind or people ask me :)
 
+How to move between terminals in text mode installation using Anaconda?
+-----------------------------------------------------------------------
+
+Ctrl + B, 2
+
 Why there is a separate compose tree for Cloud?
 -----------------------------------------------
 
