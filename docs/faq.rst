@@ -15,4 +15,9 @@ Not very clear but someone from community or rel-eng thought that it is a good i
 this might help in future. The tree is generated from `this <https://git.fedorahosted.org/cgit/spin-kickstarts.git/tree/fedora-install-cloud.ks>`_
 kickstart file.
 
+From where I can learn more about Kickstart files?
+---------------------------------------------------
+
+Read `this wiki <http://fedoraproject.org/wiki/Anaconda/Kickstart>`_ page.
+
 
