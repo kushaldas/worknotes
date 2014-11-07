@@ -72,8 +72,19 @@ def install_pss():
     print result.format(status=status)
     return return_value
 
+def get_package_list():
+    """We will get the installed packages from the instance.
+
+    This should not be a problem for a koji build but it can cause issues in local builds.
+    We will also be able to check any random package in the instance which is not supposed to be there."""
+    response = sudo('rpm -qa')
+    return response
+
 def all():
     print "\n\n\n"
     selinux()
     systemlogging()
     service_status()
+    install_pss()
+    print "\nNow we get print the list of packages from the instance.\n"
+    print get_package_list()
