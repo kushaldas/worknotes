@@ -20,6 +20,15 @@
 from fabric.api import sudo
 
 
+class bcolors(object):
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+
+
 def selinux():
     'Gets the selinux status'
     result = 'Test SeLinux: {status}'
@@ -82,16 +91,22 @@ def get_package_list():
 
 def va():
     "Gets the output of rpm -Va"
-    response = sudo('rpm -Va')
+    response = sudo('rpm -Va;true')
     return response
 
-def all():
+def alltasks():
     print "\n\n\n"
-    selinux()
-    systemlogging()
-    service_status()
+    results = [selinux(),\
+    systemlogging(),\
+    service_status()]
     install_pss()
     print "\nNow we get print the list of packages from the instance.\n"
-    print get_package_list()
-    print "Now let us get the output of rpm -Va for verification of the packages."
+    packages = get_package_list()
+    print "\nNow let us get the output of rpm -Va for verification of the packages."
     print va()
+    print "\n\n"
+    if all(results):
+        print bcolors.OKGREEN, "All TESTS PASSED.", bcolors.ENDC
+    else:
+        print bcolors.WARNING, "SOME TEST(S) FAILED.", bcolors.ENDC
+
