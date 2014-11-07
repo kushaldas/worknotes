@@ -59,6 +59,18 @@ def service_status():
     print result.format(status=status)
     return return_value
 
+def install_pss():
+    "This will install pss to test yum/dnf and network of the system."
+    result = 'Yum installation: {status}'
+    response = sudo('yum install pss -y')
+    response = sudo('ls -l /usr/bin/pss')
+    status = 'FAIL'
+    return_value = False
+    if not  'No such file or directory' in response:
+        status = 'PASS'
+        return_value = False
+    print result.format(status=status)
+    return return_value
 
 def all():
     print "\n\n\n"
