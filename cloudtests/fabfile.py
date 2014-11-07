@@ -40,7 +40,7 @@ def systemlogging():
         'journalctl -a --no-pager -r --since=$(date +%Y-%m-%d) -n1')
     return_value = False
     status = 'FAIL'
-    if response.splitlines() == 2:
+    if response.splitlines() >= 2:
         status = 'SUCCESS'
         return_value = True
     print result.format(status=status)
