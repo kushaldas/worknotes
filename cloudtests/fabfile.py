@@ -80,6 +80,11 @@ def get_package_list():
     response = sudo('rpm -qa')
     return response
 
+def va():
+    "Gets the output of rpm -Va"
+    response = sudo('rpm -Va')
+    return response
+
 def all():
     print "\n\n\n"
     selinux()
@@ -88,3 +93,5 @@ def all():
     install_pss()
     print "\nNow we get print the list of packages from the instance.\n"
     print get_package_list()
+    print "Now let us get the output of rpm -Va for verification of the packages."
+    print va()
