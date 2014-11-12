@@ -86,6 +86,13 @@ Disabling root password
 
 You can configure imagefactory to disable any root password in the template. You have to do it in */etc/imagefactory/imagefactory.conf*, change the value of *tdl_require_root_pw* to 0.
 
+How to create a qcow2 image?
+----------------------------
+
+Like the example below::
+
+    $ /usr/bin/qemu-img convert -c -f raw -O qcow2 /var/tmp/koji/tasks/8932/7978932/output_image/3f009dd2-e488-4bb2-960a-5c3765241bad.body /var/tmp/koji/tasks/8932/7978932/Fedora-Cloud-Base-20141029-21_Beta.x86_64.qcow2
+
 How to test a koji image in your local computer?
 -------------------------------------------------
 
