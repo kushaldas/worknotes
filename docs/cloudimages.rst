@@ -129,7 +129,7 @@ system just give the following command::
 
     $ ./runlocal.sh
 
-For the remote systems you have to provide the instance IP like in the following example.
+For the remote systems you have to provide the instance IP like in the following example.::
 
     $ ./runremote.sh 192.168.1.2
 
