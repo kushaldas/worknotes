@@ -120,3 +120,18 @@ List of current tests for Fedora Cloud image
 ---------------------------------------------
 
 This `wiki page <https://fedoraproject.org/wiki/Test_Results:Current_Cloud_Test>`_ contains all the latest tests to run on Fedora Cloud images.
+
+How to run Kushal's personal cloud tests?
+------------------------------------------
+
+I have a set of tests for the cloud images, they are available in cloudtests directory. First start an instance locally using testCloud as shown above or create an instance in a remote Openstack/Eucalyptus/AWS account. To run the tests in the local
+system just give the following command::
+
+    $ ./runlocal.sh
+
+For the remote systems you have to provide the instance IP like in the following example.
+
+    $ ./runremote.sh 192.168.1.2
+
+
+.. note:: We need fabric to run these tests. You can install it using yum. *# yum install fabric -y*
