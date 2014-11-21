@@ -29,3 +29,8 @@ You can do it with help from *ssh* tool. The following command maps three remote
 
     $ ssh root@your_remote_host -L 5800:localhost:5900 -L 5801:localhost:5901 -L 5802:localhost:5902 -L 5803:localhost:5903
 
+How we generate Fedora Docker images?
+--------------------------------------
+
+From F21 we are using Fedora Koji builds for Docker. lsm5 takes the .tar.gz image, extracts the rootfs and compress it into a .xz file.
+Later that image is published in the Docker hub using github.
