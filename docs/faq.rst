@@ -3,6 +3,13 @@ FAQ
 
 All the random questions that comes in my mind or people ask me :)
 
+How can I contribute to the Cloud SIG?
+--------------------------------------
+
+There are many ways you can help. The easiest way to start is to test the latest cloud images on your local computer. You can 
+use the testCloud application to start an instance in your local system. You can also write your experience in your blog, write
+the tips which can save time for others. The Cloud SIG meets every week in #fedora-meeting-1 on freenode at 7pm UTC.
+
 How to move between terminals in text mode installation using Anaconda?
 -----------------------------------------------------------------------
 
