@@ -52,6 +52,16 @@ Then just use the following command to build the image.::
 
     # ./dobuild.sh fedora-cloud-base-1dddaee.ks
 
+
+How to build docker images?
+############################
+
+For docker images we will have to pass a new parameter to the imagefactory command inside *dobuild.sh*. Add the following to the end of the command
+in that file.::
+
+    --parameter offline_icicle true
+
+
 Why the kickstart file used by Fedora koji looks different?
 ###########################################################
 
