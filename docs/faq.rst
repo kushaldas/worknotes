@@ -48,3 +48,5 @@ How to convert qcow3 images to qcow2?
 Right now (at least in July, 2015) koji is building version 3 of the qcow2 images. To use them into older systems, you have to convert them into qcow2 images. You can do that with the following command::
 
     # qemu-img amend -f qcow2 -o compat=0.10 Fedora-Cloud-Base-22-20150521.x86_64.qcow2
+
+You can learn more in the corresponding `bug <https://bugzilla.redhat.com/show_bug.cgi?id=1226979>`_.
