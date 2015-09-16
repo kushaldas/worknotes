@@ -46,11 +46,13 @@ Then start the libvirt service.::
 Building your first image
 #########################
 
-Next we are going to use imagefactory to build your first image. `Download <https://kushal.fedorapeople.org/f21build.tar.gz>`_ this tar and extract it.
+Next we are going to use imagefactory to build your first image.
 
 Then just use the following command to build the image.::
 
-    # ./dobuild.sh fedora-cloud-base-1dddaee.ks
+    # imagefactory --debug base_image --file-parameter install_script fedora-cloud-base-4d05ed6.ks tdl-x86_64.xml
+
+If you are wondering from where you can get those kickstart or tdl files, have a look at `koji <http://koji.fedoraproject.org/koji/tasks?start=0&state=all&view=flat&method=createImage&order=-id>`_
 
 
 How to build docker images?
