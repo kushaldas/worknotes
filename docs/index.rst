@@ -13,6 +13,7 @@ Contents:
 
    cloudimages
    faq
+   random
 
 
 Indices and tables
